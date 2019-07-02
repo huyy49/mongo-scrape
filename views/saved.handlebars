@@ -2,6 +2,7 @@
 <div class="modal fade" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
+
       <div class="modal-header">
         <div class="modal-title"></div>
       </div>
@@ -9,6 +10,7 @@
         <p id="note">Notes</p>
         <div class="input"></div>
       </div>
+
     </div>
   </div>
 </div>
@@ -16,6 +18,7 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="/">Mongo Scraper</a>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -28,27 +31,24 @@
     </div>
   </nav>
   <div class="jumbotron text-center">
-    <h1>Mongo Scraper</h1>
-    <p>Washington Post Scraper</p>
-    <a class="btn-fetch btn btn-primary" href="/" role="button">Scrape New Articles</a>
+    <h1>Saved Articles</h1>
+    <p>Your Saved Articles</p>
   </div>
-  <div class="row" id="articles">
+  <div class="row" id="saved-articles">
     {{#each articles}}
     <div class='col-sm-12 mb-3'>
       <div class='card'>
-        <div class='card-body'>
-          <a class='title-link' href={{ link }}>
+        <div class='card-body'><a class='title-link' href={{ link}}>
             <h5> {{ title }} </h5>
           </a>
           <hr>
-          <p class='card-text'>{{ snippet }}</p>
+          <p class='card-text'> {{ snippet }} </p>
           <button data-id={{ _id }} class='btn-note btn btn-outline-primary btn-sm mr-1' data-toggle='modal'
             data-target='#myModal'>Note</button>
-          <button id='btn-save' data-id={{ _id }} class='btn btn-outline-primary btn-sm mr-1'>Save Article</button>
-          <button id='btn-delete' data-id={{ _id }} class='btn btn-outline-danger btn-sm mr-1'>Delete</button>
+          <button id='btn-delete' data-id={{ _id }} class='btn btn-outline-danger btn-sm'>Delete</button>
         </div>
       </div>
     </div>
-      {{/each}}
-    </div>
+    {{/each}}
   </div>
+</div>
