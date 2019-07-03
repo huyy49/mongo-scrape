@@ -89,7 +89,6 @@ $(document).on("click", "#btn-delete", function() {
     .parents(".card")
     .remove();
 
-  var thisId = $(this).attr("data-id");
   console.log(thisId);
   $.ajax({
     method: "DELETE",
@@ -97,6 +96,6 @@ $(document).on("click", "#btn-delete", function() {
     success: (function(data) {
       console.log(data);
       location.reload();
-    });
+    }),
   });
 });
